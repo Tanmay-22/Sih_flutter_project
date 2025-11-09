@@ -41,21 +41,23 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'your-web-api-key',
-    appId: '1:123456789:web:abcdef123456789',
-    messagingSenderId: '123456789',
-    projectId: 'agriadvisor-ai',
-    authDomain: 'agriadvisor-ai.firebaseapp.com',
-    storageBucket: 'agriadvisor-ai.appspot.com',
-    measurementId: 'G-XXXXXXXXXX',
+    apiKey: "AIzaSyB_Gif-ww5H89iNQRHdN9kYHTCHeY1D_Aw",
+    authDomain: "esp32-fe88b.firebaseapp.com",
+    databaseURL:
+        "https://esp32-fe88b-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "esp32-fe88b",
+    storageBucket: "esp32-fe88b.firebasestorage.app",
+    messagingSenderId: "787884523949",
+    appId: "1:787884523949:web:5b43af2a6912f2e33ca124",
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'your-android-api-key',
-    appId: '1:123456789:android:abcdef123456789',
-    messagingSenderId: '123456789',
-    projectId: 'agriadvisor-ai',
-    storageBucket: 'agriadvisor-ai.appspot.com',
+    apiKey: "AIzaSyB_Gif-ww5H89iNQRHdN9kYHTCHeY1D_Aw",
+    appId: "1:787884523949:android:5b43af2a6912f2e33ca124",
+    messagingSenderId: "787884523949",
+    projectId: "esp32-fe88b",
+    databaseURL: "https://esp32-fe88b-default-rtdb.asia-southeast1.firebasedatabase.app",
+    storageBucket: "esp32-fe88b.firebasestorage.app",
   );
 
   static const FirebaseOptions ios = FirebaseOptions(

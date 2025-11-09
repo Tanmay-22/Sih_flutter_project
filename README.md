@@ -14,3 +14,13 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Running the Application
+
+To run the app, you'll need to have the Flutter SDK installed on your machine.
+
+First, ensure you have a device connected or an emulator running. Then, from the root of the project directory, you can run the following command in your terminal:
+
+```bash
+flutter run
+```

@@ -10,6 +10,8 @@ import '../../features/soil/soil_detection_screen.dart';
 import '../../features/market/market_prices_dialog.dart';
 import '../../features/settings/language_settings_screen.dart';
 import '../../features/auth/mobile_sign_in_screen.dart';
+import '../../features/iot/iot_dashboard_screen.dart';
+import '../../features/sensors/sensor_dashboard_screen.dart';
 import '../../l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -35,6 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
       const DiagnosisScreen(),
       const ChatScreen(),
       const WorkingWeatherScreen(),
+      const SensorDashboardScreen(),
       const ProfileTab(),
     ];
 
@@ -89,6 +92,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 BottomNavigationBarItem(
                   icon: const Icon(Icons.wb_sunny),
                   label: localizations.weather,
+                ),
+                BottomNavigationBarItem(
+                  icon: const Icon(Icons.sensors),
+                  label: 'Sensors',
                 ),
                 BottomNavigationBarItem(
                   icon: const Icon(Icons.person),
@@ -244,6 +251,21 @@ class DashboardTab extends StatelessWidget {
                       context: context,
                       barrierDismissible: false,
                       builder: (context) => const MarketPricesDialog(),
+                    );
+                  },
+                ),
+                _buildActionCard(
+                  context,
+                  icon: Icons.sensors,
+                  title: 'IoT Dashboard',
+                  subtitle: 'Monitor sensors',
+                  color: AppTheme.primaryBlue,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const IoTDashboardScreen(),
+                      ),
                     );
                   },
                 ),
