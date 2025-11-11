@@ -20,13 +20,15 @@ class SensorData {
   // Convert Firebase data to SensorData object
   factory SensorData.fromFirebase(Map<String, dynamic> data) {
     final sensors = data['Sensors'] ?? {};
+    final lightDetected = sensors['LightDetected'];
+    final lightValue = lightDetected is bool ? (lightDetected ? 100.0 : 0.0) : (lightDetected ?? 0).toDouble();
     return SensorData(
-      dht22Temperature: (sensors['DHT22']?['Temperature'] ?? 0).toDouble(),
-      dht22Humidity: (sensors['DHT22']?['Humidity'] ?? 0).toDouble(),
-      ldr: (sensors['LDR']?['Status'] == 'Bright' ? 1000 : 100).toDouble(),
-      mlx90614: (sensors['MLX90614']?['ObjectTemp'] ?? 0).toDouble(),
-      mq135: (sensors['MQ135']?['Raw'] ?? 0).toDouble(),
-      moisture: (sensors['Moisture']?['Percent'] ?? 0).toDouble(),
+      dht22Temperature: (sensors['AmbientTemp'] ?? 0).toDouble(),
+      dht22Humidity: (sensors['Humidity'] ?? 0).toDouble(),
+      ldr: lightValue,
+      mlx90614: (sensors['ObjectTemp'] ?? 0).toDouble(),
+      mq135: (sensors['AirQuality'] ?? 0).toDouble(),
+      moisture: (sensors['SoilMoisture'] ?? 0).toDouble(),
       pH: (sensors['pH'] ?? 0).toDouble(),
     );
   }

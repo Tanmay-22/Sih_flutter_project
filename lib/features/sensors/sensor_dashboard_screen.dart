@@ -217,7 +217,7 @@ class _SensorDashboardScreenState extends State<SensorDashboardScreen> {
                     children: [
                       _buildSensorCard(
                         'Moisture',
-                        '${data.moisture.toStringAsFixed(1)}%',
+                        data.moisture.toStringAsFixed(1),
                         Icons.water_drop,
                         AppTheme.primaryBlue,
                       ),
@@ -235,7 +235,7 @@ class _SensorDashboardScreenState extends State<SensorDashboardScreen> {
                       ),
                       _buildSensorCard(
                         'Light',
-                        data.ldr.toStringAsFixed(0),
+                        data.ldr > 0 ? 'Adequate' : 'Scarce',
                         Icons.wb_sunny,
                         Colors.amber[700]!,
                       ),
